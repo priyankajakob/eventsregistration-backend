@@ -1,6 +1,5 @@
 const {Registration} = require('../models/registration')
 const {Event}=require('../models/event')
-const {User}=require('../models/user')
 
 module.exports.list=(req,res)=>{
     Registration.find().populate('user').populate('event')
