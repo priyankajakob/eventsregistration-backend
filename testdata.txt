@@ -1,0 +1,70 @@
+{
+        "fullName": "Priyanka Jacob",
+        "mobile": 9886068885,
+        "email": "priyanka.jacob93@gmail.com",
+        "password": "Secret123",
+		"cardNo":"321456"
+}
+
+
+
+	
+{
+	"eventName":"Karoke Night",
+    "eventDate":"24 April 2019",
+    "eventTime":"9 PM to 11.55PM",
+    "eventType":"Cultural",
+    "eventPlace":"No Limitz,MG Road,Bangalore",
+    "ticketCost":"1500",
+    "maxParticipants":"50"
+}
+
+{
+	"eventName":"DJ Friday",
+    "eventDate":"29 April 2019",
+    "eventTime":"6 PM to 10 PM",
+    "eventType":"Party",
+    "eventPlace":"Social,MG Road,Bangalore",
+    "ticketCost":"4500",
+    "maxParticipants":"150"
+}
+
+{
+	"eventName":"Antakshari",
+    "eventDate":"12 April 2019",
+    "eventTime":"4 PM to 6 PM",
+    "eventType":"Cultural",
+    "eventPlace":"Arts Studio,Indira Nagar,Bangalore",
+    "ticketCost":"900",
+    "maxParticipants":"40"
+}
+
+{
+	"eventName":"Food Fest",
+    "eventDate":"9 April 2019",
+    "eventTime":"10 AM to 6 PM",
+    "eventType":"Fest",
+    "eventPlace":"Christ Ground,Bangalore",
+    "ticketCost":"200",
+    "maxParticipants":"2000"
+}
+
+{
+	"eventName":"Beer Up",
+    "eventDate":"30 April 2019",
+    "eventTime":"5 PM to 11 PM",
+    "eventType":"Party",
+    "eventPlace":"Woodys,Indira Nagar,Bangalore",
+    "ticketCost":"600",
+    "maxParticipants":"100"
+}
+
+ "user":5ed20df493c845361815553b,
+ "event":"5ed2146622a65a2c6483c8bd",
+ "registrationDate":"12 April 2019",
+ "registrationType":"Self",
+ "noOfTickets":2,
+ "registrationName":"Priyanka"
+ 
+
+5ed2146622a65a2c6483c8bd
