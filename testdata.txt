@@ -1,8 +1,8 @@
 {
-        "fullName": "Priyanka Jacob",
-        "mobile": 9886068885,
-        "email": "priyanka.jacob93@gmail.com",
-        "password": "Secret123",
+        "fullName": "Test User",
+        "mobile": 8799164345,
+        "email": "testuser@gmail.com",
+        "password": "secret",
 		"cardNo":"321456"
 }
 
