@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 
 mongoose.Promise=global.Promise
 
-const url = 'mongodb://localhost:27017/events-app'
+const url = 'mongodb://localhost:27017/events-app1'
 
 mongoose.connect(url,{ useNewUrlParser: true })
 .then(()=>{

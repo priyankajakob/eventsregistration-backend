@@ -1,4 +1,4 @@
-const {User} = require('../models/user')
+const User = require('../models/user')
 const _ = require('lodash')
 
 module.exports.list=(req,res)=>{
@@ -16,7 +16,13 @@ module.exports.listEventAgents=(req,res)=>{
     User.find({role})
     .then(user=>{
         if(user)
-        res.json(user)
+        {
+            res.json(user)
+            //pick not working through user obj is not empty -- to be checked
+            // console.log(user)
+            // console.log(_.pick(user,['_id']))
+            // // res.json(_.pick(user,['_id','fullName','email','createdAt']))
+        }
         else
         res.json({})
     })
@@ -39,7 +45,7 @@ module.exports.listCustomers=(req,res)=>{
     })
 }
 
-module.exports.create=(req,res)=>{
+module.exports.register=(req,res)=>{
     const {body}=req
     if(((body.role=='Agent' || body.role=='Customer') && body.cardNo) || (body.role=='Admin'))
     {
@@ -58,6 +64,21 @@ module.exports.create=(req,res)=>{
     else {
         res.json({error:"ID Card No is mandatory to be given"})
     }
+}
+
+module.exports.login=(req,res)=>{
+    const {body}=req
+    User.findByCredentials(body.email,body.password)
+        .then((user)=>{
+            return user.generateToken()
+        })
+        .then((token)=>{
+            console.log("sdsd")
+            res.send({token})
+        })
+        .catch(err=>{
+            res.send(err)
+        })
 }
 
 module.exports.show=(req,res)=>{
@@ -104,6 +125,20 @@ module.exports.destroy=(req,res)=>{
     .catch(err=>{
         res.json({error:err})
     })
+}
+
+module.exports.logout = (req,res)=>{
+    console.log("here")
+    const {user,token}=req.body
+    //tokens array not getting deleted on logout
+    User.findByIdAndUpdate(user._id, { $pull: { tokens: { token: token } } })
+        .then(function () {
+            res.send({ notice: 'successfully logged out' })
+        })
+        .catch(function (err) {
+            res.send(err)
+        })
+
 }
 
 // module.exports.registeredEventsByUser=(req,res)=>{
