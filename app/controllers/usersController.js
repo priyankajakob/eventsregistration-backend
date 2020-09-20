@@ -129,16 +129,18 @@ module.exports.destroy=(req,res)=>{
 
 module.exports.logout = (req,res)=>{
     console.log("here")
-    const {user,token}=req.body
-    //tokens array not getting deleted on logout
-    User.findByIdAndUpdate(user._id, { $pull: { tokens: { token: token } } })
+    //here user and token is assigned into req object via authenticateUser middleware function
+    const {user,token}=req
+    //tokens array not getting deleted on logout--issue --it was because authenticateUser not given in route for logout
+    console.log(user,token)
+    //The $pull operator removes from an existing array all instances of a value or values that match a specified condition.
+    User.findByIdAndUpdate(user._id, { $pull: { "tokens": { token : token } } })
         .then(function () {
             res.send({ notice: 'successfully logged out' })
         })
         .catch(function (err) {
             res.send(err)
         })
-
 }
 
 // module.exports.registeredEventsByUser=(req,res)=>{
