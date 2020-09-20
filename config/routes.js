@@ -15,7 +15,7 @@ router.post('/users/register',usersController.register)
 router.post('/users/login',usersController.login)
 router.delete('/users/logout',authenticateUser,usersController.logout)
 router.get('/users/:id',usersController.show)
-router.put('/users/:id',usersController.update)
+router.put('/users/:id',authenticateUser,usersController.update)
 router.delete('/users/:id',onlyAdminAccess,usersController.destroy)
 
 router.get('/events',authenticateUser,eventsController.list)

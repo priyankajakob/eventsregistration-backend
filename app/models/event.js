@@ -50,6 +50,10 @@ const eventSchema = new Schema({
         ref:'User',
         required:[true, 'Received null value for user']
     },
+    //code for below to be added in registration create controller
+    registeredParticipants:{
+        type:Number
+    }
 })
 
 const Event = mongoose.model('Event',eventSchema)

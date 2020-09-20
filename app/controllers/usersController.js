@@ -4,6 +4,8 @@ const _ = require('lodash')
 module.exports.list=(req,res)=>{
     User.find()
     .then(users=>{
+        //console.log(users)
+        //res.json(_.pick(users,['_id','fullName','email','createdAt'])) - why not working to be checked
         res.json(users)
     })
     .catch(err=>{
@@ -73,7 +75,6 @@ module.exports.login=(req,res)=>{
             return user.generateToken()
         })
         .then((token)=>{
-            console.log("sdsd")
             res.send({token})
         })
         .catch(err=>{
@@ -98,19 +99,29 @@ module.exports.show=(req,res)=>{
 module.exports.update=(req,res)=>{
     const {id}=req.params
     const {body}=req
-    User.findByIdAndUpdate(id,body,{new:true,runValidators:true})
-    .then(user=>{
-        console.log(user)
-        if(user){
-            res.json(user)
-        }
-        else {
-            res.json({})
-        }
-    })
-    .catch(err=>{
-        res.json({error:err})
-    })
+    console.log(req.user.fullName,req.user.role)
+    // console.log(req.user._id==id)
+    if(req.user._id==id || req.user.role=="Admin")
+    {
+        User.findOneAndUpdate({_id: id }, { $set: body }, { new: true, runValidators: true })
+        //User.findByIdAndUpdate(id,body,{new:true,runValidators:true})
+        .then(user=>{
+            console.log(user)
+            if(user){
+                res.json(user)
+            }
+            else {
+                res.json({})
+            }
+        })
+        .catch(err=>{
+            res.json({error:err})
+        })
+    }
+    else{
+        res.json({})
+    }
+    
 }
 
 module.exports.destroy=(req,res)=>{

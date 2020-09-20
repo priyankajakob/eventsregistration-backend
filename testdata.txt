@@ -47,7 +47,7 @@
 //Event Creation//
 	
 {
-    "user":"5f65cb837074813188e3bf24",
+  
 	"eventName":"Karoke Night",
     "eventDate":"2 October 2020",
     "eventTime":"9 PM to 11.55PM",
@@ -59,7 +59,7 @@
 }
 
 {
-    "user":"5f65cb837074813188e3bf24",
+    
 	"eventName":"DJ Friday",
     "eventDate":"29 October 2020",
     "eventTime":"6 PM to 10 PM",
@@ -71,7 +71,7 @@
 }
 
 {
-    "user":5f65cb6d7074813188e3bf22,
+    
 	"eventName":"Come Laugh Leave",
     "eventDate":"1 November 2020",
     "eventTime":"4 PM to 6 PM",
@@ -101,15 +101,25 @@
     "eventAddress":"Inc ltd,Indira Nagar",
     "ticketCost":"200",
     "maxParticipants":"100",
-    "user":"5f6710d88ee977301c8c9ad2"
 }
 
- "user":5ed20df493c845361815553b,
- "event":"5ed2146622a65a2c6483c8bd",
- "registrationDate":"12 April 2019",
+{
+	"eventName":"Sit Back and Code Round 2",
+    "eventDate":"30 November 2020",
+    "eventTime":"9 AM to 11 PM",
+    "eventType":"Technical Event",
+    "eventPlace":"Bangalore",
+    "eventAddress":"Inc ltd,Indira Nagar",
+    "ticketCost":"200",
+    "maxParticipants":"100",
+}
+
+ 
+ "event":"5f673007c8a48e0a149a226c",
+ "registrationDate":"20 July 2020",
  "registrationType":"Self",
  "noOfTickets":2,
- "registrationName":"Priyanka"
+ "registrationName":"PinkyJ"
  
 
 5ed2146622a65a2c6483c8bd
