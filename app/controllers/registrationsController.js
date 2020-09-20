@@ -38,7 +38,10 @@ module.exports.show=(req,res)=>{
     const {id}=req.params
     Registration.findOne({_id:id}).populate('user').populate('event')
     .then(registration=>{
+        if(registration)
         res.json(registration)
+        else
+        res.json({})
     })
     .catch(err=>{
         res.json({error:err})

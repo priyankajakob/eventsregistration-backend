@@ -146,6 +146,7 @@ userSchema.methods.generateToken = function(){
 //For findingby token each time
 userSchema.statics.findByToken=function(token){
     const User=this
+    console.log(User)//Model {User}
     let tokenData
     try {
         tokenData = jwt.verify(token,"jwt@321")
@@ -154,9 +155,10 @@ userSchema.statics.findByToken=function(token){
     catch(err){
         return Promise.reject(err)
     }
-    if(User.role=="Admin")
-        return User
-    else
+    //below code should be in onlyAdmnAccess
+    // if(User.role=="Admin")
+    //     return User
+    // else
     return User.findOne({
         _id:tokenData._id,
         'tokens.token':token

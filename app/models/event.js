@@ -44,7 +44,12 @@ const eventSchema = new Schema({
     isComplete: {
         type: Boolean,
         default: false
-    }
+    },
+    user:{
+        type:Schema.Types.ObjectId,
+        ref:'User',
+        required:[true, 'Received null value for user']
+    },
 })
 
 const Event = mongoose.model('Event',eventSchema)

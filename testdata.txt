@@ -93,13 +93,15 @@
 }
 
 {
-	"eventName":"Beer Up",
-    "eventDate":"30 April 2019",
-    "eventTime":"5 PM to 11 PM",
-    "eventType":"Party",
-    "eventPlace":"Woodys,Indira Nagar,Bangalore",
-    "ticketCost":"600",
-    "maxParticipants":"100"
+	"eventName":"Sit Back and Code",
+    "eventDate":"30 October 2020",
+    "eventTime":"9 AM to 11 PM",
+    "eventType":"Technical Event",
+    "eventPlace":"Bangalore",
+    "eventAddress":"Inc ltd,Indira Nagar",
+    "ticketCost":"200",
+    "maxParticipants":"100",
+    "user":"5f6710d88ee977301c8c9ad2"
 }
 
  "user":5ed20df493c845361815553b,

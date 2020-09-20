@@ -86,9 +86,9 @@ module.exports.show=(req,res)=>{
     User.findOne({_id:id})
     .then(user=>{
         if(user)
-        res.json(user)
+            res.json(user)
         else
-        res.json({})
+            res.json({})
     })
     .catch(err=>{
         res.json({error:err})
@@ -108,19 +108,25 @@ module.exports.update=(req,res)=>{
             res.json({})
         }
     })
-    .catch(error=>{
+    .catch(err=>{
         res.json({error:err})
     })
 }
 
 module.exports.destroy=(req,res)=>{
     const {id}=req.params
+    console.log("came to destroy")
     User.findByIdAndDelete(id)
     .then(user=>{
         if(user)
+        //when user is deleted the user object is returned right now. Can change in future to instead send a message that user is deleted. Upto FE now to show right message to user.
             res.json(user)
         else
+        {
+            console.log("user",user)
             res.json({})
+        }
+            
     })
     .catch(err=>{
         res.json({error:err})

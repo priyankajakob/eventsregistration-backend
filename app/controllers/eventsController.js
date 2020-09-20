@@ -26,7 +26,10 @@ module.exports.show=(req,res)=>{
     const {id}=req.params
     Event.findOne({_id:id})
     .then(event=>{
+        if(event)
         res.json(event)
+        else
+        res.json({})
     })
     .catch(err=>{
         res.json({error:err})
