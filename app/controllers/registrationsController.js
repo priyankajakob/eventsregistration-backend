@@ -6,7 +6,7 @@ module.exports.list=(req,res)=>{
     console.log(req.user.fullName,req.user.role)
     //below condition is because admin should be given permission to see all registrations
     if(req.user.role=="Admin"){
-        Registration.find().populate('user').populate('event')
+        Registration.find()//.populate('user').populate('event')
         .then(registrations=>{
             res.json(registrations)
         })
@@ -16,7 +16,7 @@ module.exports.list=(req,res)=>{
     }
     else
     {
-        Registration.find({ user: req.user._id }).populate('user').populate('event')
+        Registration.find({ user: req.user._id })//.populate('user').populate('event')
         .then(registrations=>{
             res.json(registrations)
         })
@@ -74,7 +74,7 @@ module.exports.create=(req,res)=>{
 module.exports.show=(req,res)=>{
     const {id}=req.params
     //shouldn't admin also be able to see? - yet to code
-    Registration.findOne({_id:id,user:req.user._id}).populate('user').populate('event')
+    Registration.findOne({_id:id,user:req.user._id})//.populate('user').populate('event')
     .then(registration=>{
         if(registration)
         res.json(registration)
